@@ -1,0 +1,15 @@
+[submodule "src/diff_planner"]
+	path = src/diff_planner
+	url = https://github.com/DifferentialRobotics/diff_planner.git
+[submodule "src/px4ctrl"]
+	path = src/px4ctrl
+	url = https://github.com/DifferentialRobotics/px4ctrl.git
+[submodule "src/faster-lio"]
+	path = src/faster-lio
+	url = https://github.com/DifferentialRobotics/faster-lio.git
+[submodule "src/vins-fusion-gpu"]
+	path = src/vins-fusion-gpu
+	url = https://github.com/DifferentialRobotics/vins-fusion-gpu.git
+[submodule "src/utils"]
+	path = src/utils
+	url = https://github.com/DifferentialRobotics/utils.git
