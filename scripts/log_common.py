@@ -47,7 +47,6 @@ def get_logging_config():
         'enabled': log_cfg.get('enabled', True),
         'max_size_gb': log_cfg.get('max_size_gb', 2.0),
         'min_free_space_mb': log_cfg.get('min_free_space_mb', 500),
-        'auto_start': log_cfg.get('auto_start', True),
         'session_retention': log_cfg.get('session_retention', 50),
     }
 
@@ -185,8 +184,6 @@ def parse_rc_state(channels):
             return ('机载控制-跟随轨迹', '#a6e3a1')
     elif ch5 >= 1300:
         return ('手动飞行-光流', '#f9e2af')
-    elif ch5 >= 900:
-        return ('手动控制-自稳', '#f9e2af')
 
     return ('未连接', '#f38ba8')
 
@@ -254,11 +251,11 @@ def get_hint(rc_text, fs_text, channels, px4_state):
         return ('遥控器处于未连接状态，无法自主起飞，请检查遥控器连接！', red)
 
     # 2. 手动模式 + 手动控制
-    if rc_text in ('手动控制-自稳', '手动飞行-光流') and fs_text == '手动控制':
+    if rc_text == '手动飞行-光流' and fs_text == '手动控制':
         return ('遥控器处于手动状态，无法自主起飞，请检查遥控器SB通道并重启程序！', red)
 
     # 10. 手动模式 → 悬停
-    if rc_text in ('手动控制-自稳', '手动飞行-光流') and fs_text == '悬停':
+    if rc_text == '手动飞行-光流' and fs_text == '悬停':
         return ('错误操控按键，请勿起飞，请确认遥控器通道无误后重启程序！', red)
 
     # 3. 机载悬停 + 手动控制
