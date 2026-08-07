@@ -1,15 +1,15 @@
-[submodule "src/diff_planner"]
-	path = src/diff_planner
+[submodule "open/src/diff_planner"]
+	path = open/src/diff_planner
 	url = ../diff_planner.git
-[submodule "src/px4ctrl"]
-	path = src/px4ctrl
+[submodule "open/src/px4ctrl"]
+	path = open/src/px4ctrl
 	url = ../px4ctrl.git
-[submodule "src/faster-lio"]
-	path = src/faster-lio
+[submodule "open/src/faster-lio"]
+	path = open/src/faster-lio
 	url = ../faster-lio.git
-[submodule "src/vins-fusion-gpu"]
-	path = src/vins-fusion-gpu
+[submodule "open/src/vins-fusion-gpu"]
+	path = open/src/vins-fusion-gpu
 	url = ../vins-fusion-gpu.git
-[submodule "src/utils"]
-	path = src/utils
+[submodule "open/src/utils"]
+	path = open/src/utils
 	url = ../utils.git

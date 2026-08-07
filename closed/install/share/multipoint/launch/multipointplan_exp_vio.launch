@@ -1,0 +1,22 @@
+<launch>
+    <arg name="odom_topic" value="/vins/imu_propagate" />
+    <arg name="next_distance" value="0.1" />
+    <arg name="fligt_type" value="1" />   <!-- 1到4代表4种控制模式 -->
+    <arg name="start_plan" value="1" />   <!-- 1表示启动多点规划，0表示不启动 -->
+    <arg name="back_plan" value="1" />   <!-- 1表示启动回城多点规划，0表示不启动 -->
+    <arg name="auto_planning" value="0" />   <!-- 1表示起飞悬停后自动规划，0表示不启动 -->
+    <arg name="auto_landing" value="0" />   <!-- 1表示到达最后一个点后自动降落，0表示不启动 -->
+   
+    <node pkg="multipoint" name="multipointplan" type="multipointplan" output="screen">
+        <remap from="odom_topic" to="$(arg odom_topic)"/>
+        <param name="yaml_path" value="$(find multipoint)/config/points.yaml" />
+        <param name="next_distance" value="$(arg next_distance)"/>
+        <param name="fligt_type" value="$(arg fligt_type)"/>
+        <param name="start_plan" value="$(arg start_plan)"/>
+        <param name="back_plan" value="$(arg back_plan)"/>
+        <param name="auto_planning" value="$(arg auto_planning)"/>
+        <param name="auto_landing" value="$(arg auto_landing)"/>
+        <param name="enable_yaw_align" value="true" type="bool"/>     <!-- true=启用yaw预对准, false=关闭 -->
+        <param name="yaw_align_thresh" value="1.57" type="double"/>    <!-- 触发阈值(rad) -->
+    </node>
+</launch>

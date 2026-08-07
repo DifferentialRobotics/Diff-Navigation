@@ -1,0 +1,3 @@
+<launch>
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find diff_planner)/launch/include/sim.rviz" required="true" />
+</launch>

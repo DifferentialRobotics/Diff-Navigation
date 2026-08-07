@@ -1,0 +1,8 @@
+prefix=/home/nv/Diff-Navigation/closed/install
+
+Name: diff_planner
+Description: Description of diff_planner
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -ldiff_planner
+Requires: plan_env path_searching traj_opt traj_utils corridor_gen

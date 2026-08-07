@@ -1,0 +1,8 @@
+prefix=/home/nv/Diff-Navigation/closed/install
+
+Name: swarm_bridge
+Description: Description of swarm_bridge
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: traj_utils

@@ -1,0 +1,8 @@
+prefix=/home/nv/Diff-Navigation/closed/install
+
+Name: multipoint
+Description: Description of multipoint
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: roscpp message_runtime

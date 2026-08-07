@@ -1,0 +1,8 @@
+prefix=/home/nv/Diff-Navigation/closed/install
+
+Name: corridor_gen
+Description: Description of corridor_gen
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -lcorridor_gen
+Requires: roscpp plan_env
