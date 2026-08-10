@@ -29,8 +29,8 @@
         <arg name="local_map_size_z" value="2.0"/>
         <arg name="enable_virtual_wall" value="true"/>
         <arg name="virtual_ceil" value="2.0"/>
-        <arg name="virtual_ground" value="0.2"/>
-        <arg name="map_resolution" value="0.4"/>
+        <arg name="virtual_ground" value="0.1"/>
+        <arg name="map_resolution" value="0.15"/>
         <arg name="inflation_size" value="0.3"/>
 
         <arg name="init_x"     value="0"/>
