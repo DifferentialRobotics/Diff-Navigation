@@ -1,29 +1,16 @@
 #!/bin/zsh
 # =============================================================================
 # 集群启动脚本 —— 开源版 diff_planner
-# -----------------------------------------------------------------------------
-# 适配自 open/sh_files/run_swarm.sh（2026-08-06）：
-#   相对路径 source devel/setup.zsh 改为绝对路径（open/devel/setup.zsh），
-#   可在任意目录执行。
 # =============================================================================
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
 OPEN_DIR="$PROJECT_DIR/open"
 SETUP_FILE="$OPEN_DIR/devel/setup.zsh"
 
-if [ ! -f "$SETUP_FILE" ]; then
-    echo "[错误] 未找到开源工作空间环境文件: $SETUP_FILE"
-    echo "       请先编译 open 工作空间。"
-    exit 1
-fi
+
 source /opt/ros/noetic/setup.zsh
 source "$SETUP_FILE"
 
-# faster_lio 的 mapping_mid360.launch 需要 $(env BD_LIST)（无默认值），未设置则兜底
-if [ -z "${BD_LIST:-}" ]; then
-    export BD_LIST="100000000000000"
-    echo "[警告] 环境变量 BD_LIST 未设置，已使用占位值 100000000000000"
-fi
 
 export DRONE_ID=0;
 export INIT_X=-2.0; export INIT_Y=1.0; export INIT_Z=0.0;
